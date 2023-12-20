@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image_landing_page from '../assets/image_landing_page.png';
 import Logo from '../assets/image_AZ.png';
 import '../app/globals.css';
+import About from './components/About';
+import Contact from './components/Contact';
 
 export default async function Home() {
   return (
@@ -25,14 +27,14 @@ export default async function Home() {
               </span>
             </li>
             <li className="mb-4 lg:mb-0 lg:pr-2">
-              <a className="block p-2 font-medium"
-                href="#!">
-              Sobre</a>
+              <Link className="block p-2 font-medium"
+                href="#about">Sobre
+              </Link>
             </li>
             <li className="mb-4 lg:mb-0 lg:pr-2">
-                <a className="block p-2 font-medium"
-                  href="#!">Contato
-                </a>
+              <Link className="block p-2 font-medium"
+                href="#contact">Contato
+              </Link>
             </li>
           </ul>
         </div>
@@ -61,6 +63,8 @@ export default async function Home() {
           />
         </div>
       </div>
+      <About />
+      <Contact />
     <Footer />
     </div>
   </>
