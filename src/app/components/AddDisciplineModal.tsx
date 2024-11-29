@@ -18,11 +18,15 @@ type ModalProps = {
     }
 
   const [name, setName] = useState<string>();
-  const [year, setYear] = useState<string>();
-  const [glossaryId, setGlossaryId] = useState<string>();
+  const [yearString, setYear] = useState<string>();
+  const [glossaryIdString, setGlossaryId] = useState<string>();
   const [description, setDescription] = useState<string>();
   const [isSubmitting, setIsSubmitting] = useState(false); 
   const router = useRouter(); 
+
+  // conversao
+  const glossaryId = Number(glossaryIdString);
+  const year = Number(yearString);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();

@@ -10,13 +10,15 @@ import 'react-toastify/dist/ReactToastify.css';
 export default function FormGlossary() {
   const [name, setName] = useState<string>();
   const [description, setDescription] = useState<string>();
-  const [courseId, setCourseId] = useState<string>()
+  const [courseIdString, setCourseId] = useState<string>();
   const [isSubmitting, setIsSubmitting] = useState(false);  
   const router = useRouter();
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setIsSubmitting(true);
+
+    const courseId = Number(courseIdString);
 
     try {
       await api.post('/glossary', { name, description, courseId})
